@@ -6,7 +6,7 @@ export const InputCustom = ({ value, onChangeText, placeholder, type }) => {
       value={value}
       onChangeText={onChangeText}
       placeholder={placeholder}
-      placeholderTextColor={styles.placeholder}
+      placeholderTextColor="gray"
       keyboardType={type === 'email' ? 'email-address' : 'default'}
       autoCapitalize={type === 'email' ? 'none' : undefined}
       secureTextEntry={type === 'password'}
@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
     height: 50,
     marginTop: 20,
     paddingHorizontal: 16,
-    width: '100%'
+    width: '100%',
   },
-  placeholder: 'gray'
 })

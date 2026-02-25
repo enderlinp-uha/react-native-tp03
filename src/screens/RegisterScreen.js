@@ -1,6 +1,12 @@
 import { useState } from 'react'
 import { Text } from 'react-native'
-import { ButtonCustom, ButtonLink, HeaderTitle, InputCustom, ScreenWrapper } from '../components'
+import {
+  ButtonCustom,
+  ButtonLink,
+  HeaderTitle,
+  InputCustom,
+  ScreenWrapper,
+} from '../components'
 import { useAuth } from '../hooks/useAuth'
 import { showError, validators } from '../utils'
 
@@ -11,7 +17,11 @@ export const RegisterScreen = ({ navigation }) => {
   const [password, setPassword] = useState('')
 
   const validateForm = async () => {
-    if (!validators.required(email) || !validators.required(name) || !validators.required(password)) {
+    if (
+      !validators.required(email) ||
+      !validators.required(name) ||
+      !validators.required(password)
+    ) {
       showError("Le nom, l'adresse email et le mot de passe sont requis.")
       return
     }
@@ -30,7 +40,7 @@ export const RegisterScreen = ({ navigation }) => {
       await register(name, email, password)
       navigation.navigate('Connexion')
     } catch (error) {
-      showError(error.message)
+      showError(error)
     }
   }
 

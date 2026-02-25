@@ -1,5 +1,11 @@
 import { useState } from 'react'
-import { ButtonCustom, ButtonLink, HeaderTitle, InputCustom, ScreenWrapper } from '../components'
+import {
+  ButtonCustom,
+  ButtonLink,
+  HeaderTitle,
+  InputCustom,
+  ScreenWrapper,
+} from '../components'
 import { useAuth } from '../hooks/useAuth'
 import { showError, validators } from '../utils'
 
@@ -28,7 +34,7 @@ export const ForgotPasswordScreen = ({ navigation }) => {
       await changePassword(email, newPassword)
       navigation.navigate('Connexion')
     } catch (error) {
-      showError(error.message)
+      showError(error)
     }
   }
 
